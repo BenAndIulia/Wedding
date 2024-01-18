@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hochzeitseinladung</title>
+  <link rel="icon" href="images/IMG_2834 (2).ico" type="image/x-icon">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: auto;
+      background-color: transparent;
+    }
+
+    .clickable-container {
+      cursor: pointer;
+    }
+
+    .invitationcontainer {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 10px;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      padding: 2em;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      /*border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);*/
+    }
+
+    button {
+      position: absolute;
+      bottom: 10px;
+      right: 10px; /* Adjust the button position to the right bottom corner */
+      padding: 10px 20px;
+      background-color: #556C72;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3d4e53;
+    }
+    .schedule {
+      max-height: 50%;
+      max-width: 50%;
+      margin-top: 2em;
+    
+    }
+    @media  (max-width: 600px) {
+      .schedule {
+      max-height:100% ;
+      }
+    }
+    
+  </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var container = document.querySelector('.clickable-container');
+
+    container.addEventListener('click', function () {
+      window.location.href = 'rsvp_de.html';
+    });
+  });
+</script>
+
+</head>
+<body>
+  
+  <div class="invitationcontainer">
+    <img class="clickable-container" src="images/DE_Shell.png" alt="Wedding Invitation">
+    <img class="schedule" src="images/DE_Pearl.png" alt="Wedding Invitation"> 
+    <button onclick="location.href='zeitplan.html'" type="submit" class="button">Back</button>
+  </div>
+
+</body>
+</html>
