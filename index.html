@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Page</title>
+    <script>
+        // Function to handle successful geolocation retrieval
+        function success(position) {
+            // Get the user's latitude and longitude
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+
+            // Determine the user's location based on latitude and longitude
+            var userLocation = getLocation(latitude, longitude);
+
+            // Redirect based on the user's location
+            if (userLocation === 'Romania') {
+                window.location.href = 'bunvenit.html';
+            } else if (userLocation === 'Germany') {
+                window.location.href = 'willkommen.html';
+            } else {
+                window.location.href = 'welcome.html';
+            }
+        }
+
+        // Function to handle errors in geolocation retrieval
+        function error() {
+            // Handle errors (e.g., user denied geolocation)
+            console.error('Unable to retrieve geolocation.');
+        }
+
+        // Function to get user's location
+        function getUserLocation() {
+            // Check if the browser supports geolocation
+            if ('geolocation' in navigator) {
+                // Attempt to get the user's current position
+                navigator.geolocation.getCurrentPosition(success, error);
+            } else {
+                // Browser doesn't support geolocation
+                console.error('Geolocation is not supported by your browser.');
+            }
+        }
+
+        // Function to simulate getting location based on coordinates
+        function getLocation(latitude, longitude) {
+            // For simplicity, you can implement your own logic
+            // to determine location based on coordinates.
+            // This is a dummy function, and you may need to replace it.
+            if (latitude >= 45.0 && latitude <= 48.0 && longitude >= 20.0 && longitude <= 30.0) {
+                return 'Romania';
+            } else if (latitude >= 47.0 && latitude <= 55.0 && longitude >= 5.5 && longitude <= 15.0) {
+                return 'Germany';
+            } else {
+                return 'Other';
+            }
+        }
+
+        // Call the function when the page loads
+        window.onload = getUserLocation;
+    </script>
+</head>
+<body>
+    <p>This page will redirect based on user location.</p>
+</body>
+</html>
