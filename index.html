@@ -25,10 +25,10 @@
             }
         }
 
-        // Function to handle errors in geolocation retrieval
         function error() {
             // Handle errors (e.g., user denied geolocation)
-            console.error('Unable to retrieve geolocation.');
+            console.error('Unable to retrieve geolocation. Redirecting to welcome.html.');
+            window.location.href = 'welcome.html';
         }
 
         // Function to get user's location
