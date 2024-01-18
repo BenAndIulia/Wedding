@@ -95,16 +95,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .lnr-car .lnr-train .lnr-bus {
   color: #0F52BA;
-  /* We can use "color" for setting the color
-  of the SVG because we set its "fill" to
-  "currentColor" */
   font-size: 40px;
-  /* We can use "font-size" for changing the size
-  of the SVG because its width and height were
-  set 1em.
-  To get crisp results, use sizes that are
-  a multiple of 20; because Linearicons was
-  designed on a 20 by 20 grid. */
 }
 
 /* -------- Modal container --------*/
@@ -131,6 +122,7 @@ h1, h2, h3, h4, h5, h6, figure {
   height: 100%;
   object-fit: contain; 
   border-radius: 10px;
+  animation: pulsate 1s ease-in-out 2;
 }
 
 .close-modal {
@@ -145,6 +137,8 @@ h1, h2, h3, h4, h5, h6, figure {
 @media only screen and (max-width: 768px) {
   .modal-container {height:auto; padding:0%;
   }
+
+  
 }
 /* -------- End modal container --------*/
 
@@ -155,6 +149,7 @@ h1, h2, h3, h4, h5, h6, figure {
  }
 /* -------- cover first page --------*/
 
+
 /* -------- Start Slideshow gallery --------*/
 .slideshow-container {
   max-width: 1000px;
@@ -162,6 +157,9 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: auto;
 }
 
+/* .mySlides img{
+  max-height: 550px;
+} */
 .slideshowfade {
   animation-name: slideshowfade;
   animation-duration: 1.5s;
@@ -222,7 +220,15 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 0;
   line-height: 40px;
   font-family: "Sacramento", Arial, serif;
+  display: flex;
+  align-items: center;
 }
+
+#fh5co-logo ul {
+
+  font-family: "Work Sans", Arial, serif;
+}
+
 .fh5co-nav a {
   padding: 5px 10px;
   color: #fff;
@@ -257,6 +263,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-nav ul li.has-dropdown {
   position: relative;
 }
+
 .fh5co-nav ul li.has-dropdown .dropdown {
   width: 130px;
   -webkit-box-shadow: 0px 14px 33px -9px rgba(0, 0, 0, 0.75);
