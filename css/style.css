@@ -17,7 +17,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #828282;
-  background: #fff;
+  background: #f5f5f4;
 }
 
 #page {
@@ -303,6 +303,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: block;
   margin-bottom: 7px;
 }
+
 .fh5co-nav ul li.has-dropdown .dropdown li:last-child {
   margin-bottom: 0;
 }
@@ -1620,6 +1621,10 @@ flex-wrap: wrap;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+}
+#fh5co-offcanvas ul li.offcanvas-has-dropdown.active .offcanvas-dropdown {
+  display: block;
+  /* Add other styling for the visible dropdown */
 }
 #fh5co-offcanvas ul li.offcanvas-has-dropdown.active a:after {
   -webkit-transform: rotate(-180deg);
