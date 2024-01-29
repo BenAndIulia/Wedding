@@ -32,22 +32,24 @@
 			.find('li')
 			.removeClass('has-dropdown');
 
-		// Hover dropdown menu on mobile
-		$('.offcanvas-has-dropdown').mouseenter(function(){
-			var $this = $(this);
+ // Hover dropdown menu on desktop
+ if ($(window).width() > 991) {
+	$('.offcanvas-has-dropdown').mouseenter(function() {
+		var $this = $(this);
+		$this.addClass('active').find('ul').slideDown(500, 'easeOutExpo');
+	}).mouseleave(function() {
+		var $this = $(this);
+		$this.removeClass('active').find('ul').slideUp(500, 'easeOutExpo');
+	});
+} else {
+	// Click/tap dropdown menu on mobile
+	$('.offcanvas-has-dropdown > a').on('click', function(e) {
+		e.preventDefault(); // Prevent the default action (redirecting to "travel.html")
 
-			$this
-				.addClass('active')
-				.find('ul')
-				.slideDown(500, 'easeOutExpo');				
-		}).mouseleave(function(){
-
-			var $this = $(this);
-			$this
-				.removeClass('active')
-				.find('ul')
-				.slideUp(500, 'easeOutExpo');				
-		});
+		var $this = $(this).parent();
+		$this.toggleClass('active').find('ul').slideToggle(500, 'easeOutExpo');
+	});
+}
 
 
 		$(window).resize(function(){
